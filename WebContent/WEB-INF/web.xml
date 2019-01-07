@@ -9,4 +9,44 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AddAdminServlet</display-name>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <servlet-class>com.house.servlet.AddAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <url-pattern>/AddAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QueryAdminServlet</display-name>
+    <servlet-name>QueryAdminServlet</servlet-name>
+    <servlet-class>com.house.servlet.QueryAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryAdminServlet</servlet-name>
+    <url-pattern>/QueryAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllDataServlet</display-name>
+    <servlet-name>GetAllDataServlet</servlet-name>
+    <servlet-class>com.house.servlet.GetAllDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllDataServlet</servlet-name>
+    <url-pattern>/GetAllDataServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoChartsServlet</display-name>
+    <servlet-name>DoChartsServlet</servlet-name>
+    <servlet-class>com.house.servlet.DoChartsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoChartsServlet</servlet-name>
+    <url-pattern>/DoChartsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

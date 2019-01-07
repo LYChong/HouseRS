@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="res/js/echarts.common.js"></script>
+<script type="text/javascript" src="res/js/jquery-3.2.1.js"></script>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
@@ -21,6 +23,8 @@
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="res/js/Lightweight-Chart/cssCharts.css">
+    <script type="text/javascript" src="res/js/echarts.common.js"></script>
+    <script type="text/javascript" src="res/js/jquery-3.3.1.js"></script>
 </head>
 
 <body>
@@ -259,7 +263,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 数据统计 </a>
                     </li>
                     <li>
                         <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
@@ -285,7 +289,7 @@
                         <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="addInfo.jsp"><i class="fa fa-edit"></i> 添加房屋信息 </a>
                     </li>
 
 
@@ -333,12 +337,11 @@
 		  <div class="header">
                         <h1 class="page-header">
                             <!--这里可以来个欢迎某个管理者例如欢迎  杜汉涛-->
-                            房屋租售<small>欢迎XXXXX</small>
+                            房屋租售<small>欢迎<%=session.getAttribute("name") %></small>
                         </h1>
                         <!--留下来预留以后直接跳到设想的界面某处-->
 						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Dashboard</a></li>
+					  <li><a href="#">House</a></li>
 					  <li class="active">Data</li>
 					</ol> 
 									
@@ -353,8 +356,8 @@
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>44,023</h3>
-								<small>Daily Visits</small>
+								<h3><%=session.getAttribute("unumber") %></h3>
+								<small>用户人数</small>
 							</h3> 
 						</div>
 						<div class="icon">
@@ -365,47 +368,47 @@
 						</div>
                     </div>
 					
-					       <div class="col-md-3 col-sm-12 col-xs-12">
-					<div class="board">
-                        <div class="panel panel-primary">
-						<div class="number">
-							<h3>
-								<h3>32,850</h3>
-								<small>Sales</small>
-							</h3> 
-						</div>
-						<div class="icon">
-						   <i class="fa fa-shopping-cart fa-5x blue"></i>
-						</div>
+<!-- 					       <div class="col-md-3 col-sm-12 col-xs-12"> -->
+<!-- 					<div class="board"> -->
+<!--                         <div class="panel panel-primary"> -->
+<!-- 						<div class="number"> -->
+<!-- 							<h3> -->
+<!-- 								<h3>32,850</h3> -->
+<!-- 								<small>Sales</small> -->
+<!-- 							</h3>  -->
+<!-- 						</div> -->
+<!-- 						<div class="icon"> -->
+<!-- 						   <i class="fa fa-shopping-cart fa-5x blue"></i> -->
+<!-- 						</div> -->
 		 
-                        </div>
-						</div>
-                    </div>
+<!--                         </div> -->
+<!-- 						</div> -->
+<!--                     </div> -->
+					
+<!-- 					       <div class="col-md-3 col-sm-12 col-xs-12"> -->
+<!-- 					<div class="board"> -->
+<!--                         <div class="panel panel-primary"> -->
+<!-- 						<div class="number"> -->
+<!-- 							<h3> -->
+<!-- 								<h3>56,150</h3> -->
+<!-- 								<small>Comments</small> -->
+<!-- 							</h3>  -->
+<!-- 						</div> -->
+<!-- 						<div class="icon"> -->
+<!-- 						   <i class="fa fa-comments fa-5x green"></i> -->
+<!-- 						</div> -->
+		 
+<!--                         </div> -->
+<!-- 						</div> -->
+<!--                     </div> -->
 					
 					       <div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="board">
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>56,150</h3>
-								<small>Comments</small>
-							</h3> 
-						</div>
-						<div class="icon">
-						   <i class="fa fa-comments fa-5x green"></i>
-						</div>
-		 
-                        </div>
-						</div>
-                    </div>
-					
-					       <div class="col-md-3 col-sm-12 col-xs-12">
-					<div class="board">
-                        <div class="panel panel-primary">
-						<div class="number">
-							<h3>
-								<h3>89,645</h3>
-								<small>Daily Profits</small>
+								<h3><%=session.getAttribute("number") %></h3>
+								<small>管理员人数</small>
 							</h3> 
 						</div>
 						<div class="icon">
@@ -425,9 +428,76 @@
                                         <div class="title">Line Chart</div>
                                     </div>
                                 </div>
-                                <div class="panel-body">
-                                    <canvas id="line-chart" class="chart"></canvas>
-                                </div>
+                             <div class="panel-body"> 
+                                 
+                                 
+                                 <div id="main" style="width: 600px;height:400px;"></div>
+								<script type="text/javascript">
+								    // 基于准备好的dom，初始化echarts实例
+								    var myChart = echarts.init(document.getElementById('main'));
+								
+								    // 指定图表的配置项和数据
+								    var url = '${pageContext.request.contextPath}/GetAllDataServlet';
+								    $.getJSON(url).done(function(json) {//向url请求数据，如果成功，将数据放到json
+										// 2.从json中获得数据
+										mou = json.age;
+    									a = json.b;
+    									num = json.uCount;
+								    
+										option = {
+											    tooltip: {
+											        trigger: 'item',
+											        formatter: "{a} <br/>{b}: {c} ({d}%)"
+											    },
+											    legend: {
+											        orient: 'vertical',
+											        x: 'left',
+											        data:[ '租房客',' ',' ',' ','房东']
+											    },
+											    series: [
+											        {
+											            name:'访问来源',
+											            type:'pie',
+											            radius: ['50%', '70%'],
+											            avoidLabelOverlap: false,
+											            label: {
+											                normal: {
+											                    show: false,
+											                    position: 'center'
+											                },
+											                emphasis: {
+											                    show: true,
+											                    textStyle: {
+											                        fontSize: '30',
+											                        fontWeight: 'bold'
+											                    }
+											                }
+											            },
+											            labelLine: {
+											                normal: {
+											                    show: false
+											                }
+											            },
+											            data:[
+											                {value:1, name:'租客'},
+											                {value:0, name:'邮件营销'},
+											                {value:0, name:'联盟广告'},
+											                {value:0, name:'视频广告'},
+											                {value:num, name:'房东'}
+											            ]
+											        }
+											    ]
+											};
+								
+								
+								    // 使用刚指定的配置项和数据显示图表。
+								    myChart.setOption(option);
+								    })
+								</script>
+								
+								
+								
+                                </div> 
                             </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
