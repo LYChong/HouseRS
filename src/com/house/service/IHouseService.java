@@ -13,6 +13,14 @@ public interface IHouseService {
 	
 	//更据houno删除房子
 	public boolean deletHouse(int houno);
+	
+	//查询房子总数
+	public int getHouseCount();
+	
+	//查询出租房子数
+	public int getRentalHouseCount();
+
+	
 
 
 }

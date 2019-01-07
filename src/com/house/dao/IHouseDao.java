@@ -14,4 +14,9 @@ public interface IHouseDao {
 	//更据houno删除房子
 	public boolean deleteHouse(int houno);
 
+	//查询房子总数
+	public int getHouseCount();
+	
+	//查询出租房子数
+	public int getRentalHouseCount();
 }

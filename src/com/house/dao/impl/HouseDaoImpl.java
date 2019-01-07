@@ -64,4 +64,18 @@ public class HouseDaoImpl implements IHouseDao{
 		return DBUtil.executeUpdate(sql, params);
 		
 	}
+
+	//查询房子总数
+	public int getHouseCount() {
+		String sql = "select count(1) from house";
+		return DBUtil.getTotalCount(sql);
+	}
+
+	//查询出租房子数
+	public int getRentalHouseCount() {
+		String sql = "select count(1) from house where csqk=1";
+		return DBUtil.getTotalCount(sql);
+	}
+	
+	
 }

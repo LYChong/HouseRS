@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="res/js/Lightweight-Chart/cssCharts.css">
     <script type="text/javascript" src="res/js/echarts.common.js"></script>
     <script type="text/javascript" src="res/js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="res/js/css/body.css">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane">&emsp;后台</i> </strong></a>
+                    <a class="navbar-brand" href="index.jsp"><strong><i class="icon fa fa-plane">&emsp;后台</i> </strong></a>
 
 		<div id="sideNav" href="">
 		<i class="fa fa-bars icon"></i> 
@@ -265,61 +266,21 @@
                     <li>
                         <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 数据统计 </a>
                     </li>
-                    <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
-                    </li> 
+                   
 					 
-					 <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="chart.html">Charts JS</a>
-                            </li>
-                            <li>
-                                <a href="morris-chart.html">Morris Chart</a>
-                            </li>
-							</ul>
-						</li>	
+						
 							
-                    <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
+      
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="QueryAllHouseServlet"><i class="fa fa-table"></i> 信息显示	</a>
                     </li>
                     <li>
                         <a href="addInfo.jsp"><i class="fa fa-edit"></i> 添加房屋信息 </a>
                     </li>
 
 
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <li>
                         <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
@@ -368,39 +329,6 @@
 						</div>
                     </div>
 					
-<!-- 					       <div class="col-md-3 col-sm-12 col-xs-12"> -->
-<!-- 					<div class="board"> -->
-<!--                         <div class="panel panel-primary"> -->
-<!-- 						<div class="number"> -->
-<!-- 							<h3> -->
-<!-- 								<h3>32,850</h3> -->
-<!-- 								<small>Sales</small> -->
-<!-- 							</h3>  -->
-<!-- 						</div> -->
-<!-- 						<div class="icon"> -->
-<!-- 						   <i class="fa fa-shopping-cart fa-5x blue"></i> -->
-<!-- 						</div> -->
-		 
-<!--                         </div> -->
-<!-- 						</div> -->
-<!--                     </div> -->
-					
-<!-- 					       <div class="col-md-3 col-sm-12 col-xs-12"> -->
-<!-- 					<div class="board"> -->
-<!--                         <div class="panel panel-primary"> -->
-<!-- 						<div class="number"> -->
-<!-- 							<h3> -->
-<!-- 								<h3>56,150</h3> -->
-<!-- 								<small>Comments</small> -->
-<!-- 							</h3>  -->
-<!-- 						</div> -->
-<!-- 						<div class="icon"> -->
-<!-- 						   <i class="fa fa-comments fa-5x green"></i> -->
-<!-- 						</div> -->
-		 
-<!--                         </div> -->
-<!-- 						</div> -->
-<!--                     </div> -->
 					
 					       <div class="col-md-3 col-sm-12 col-xs-12">
 					<div class="board">
@@ -420,315 +348,135 @@
                     </div>
 				   
                 </div>
-				     <div class="row">
-                        <div class="col-sm-6 col-xs-12">  
-                            <div class="panel panel-default chartJs">
-                                <div class="panel-heading">
-                                    <div class="card-title">
-                                        <div class="title">Line Chart</div>
-                                    </div>
-                                </div>
-                             <div class="panel-body"> 
-                                 
-                                 
-                                 <div id="main" style="width: 600px;height:400px;"></div>
-								<script type="text/javascript">
-								    // 基于准备好的dom，初始化echarts实例
-								    var myChart = echarts.init(document.getElementById('main'));
-								
-								    // 指定图表的配置项和数据
-								    var url = '${pageContext.request.contextPath}/GetAllDataServlet';
-								    $.getJSON(url).done(function(json) {//向url请求数据，如果成功，将数据放到json
-										// 2.从json中获得数据
-										mou = json.age;
-    									a = json.b;
-    									num = json.uCount;
-								    
-										option = {
-											    tooltip: {
-											        trigger: 'item',
-											        formatter: "{a} <br/>{b}: {c} ({d}%)"
-											    },
-											    legend: {
-											        orient: 'vertical',
-											        x: 'left',
-											        data:[ '租房客',' ',' ',' ','房东']
-											    },
-											    series: [
-											        {
-											            name:'访问来源',
-											            type:'pie',
-											            radius: ['50%', '70%'],
-											            avoidLabelOverlap: false,
-											            label: {
-											                normal: {
-											                    show: false,
-											                    position: 'center'
-											                },
-											                emphasis: {
-											                    show: true,
-											                    textStyle: {
-											                        fontSize: '30',
-											                        fontWeight: 'bold'
-											                    }
-											                }
-											            },
-											            labelLine: {
-											                normal: {
-											                    show: false
-											                }
-											            },
-											            data:[
-											                {value:1, name:'租客'},
-											                {value:0, name:'邮件营销'},
-											                {value:0, name:'联盟广告'},
-											                {value:0, name:'视频广告'},
-											                {value:num, name:'房东'}
-											            ]
-											        }
-											    ]
-											};
-								
-								
-								    // 使用刚指定的配置项和数据显示图表。
-								    myChart.setOption(option);
-								    })
-								</script>
-								
-								
-								
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="panel panel-default chartJs">
-                                <div class="panel-heading">
-                                    <div class="card-title">
-                                        <div class="title">Bar Chart</div>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <canvas id="bar-chart" class="chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Profit</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Sales</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="55" ><span class="percent">55%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Customers</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="84" ><span class="percent">84%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>No. of Visits</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="46" ><span class="percent">46%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-        
-			<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
-		
-				<div class="row">
-				<div class="col-md-5">
-						<div class="panel panel-default">
-						<div class="panel-heading">
-							Line Chart
-						</div>
-						<div class="panel-body">
-							<div id="morris-line-chart"></div>
-						</div>						
-					</div>   
-					</div>		
-					
-						<div class="col-md-7">
-					<div class="panel panel-default">
-					<div class="panel-heading">
-                                Bar Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                            </div>
-						
-					</div>  
-					</div>
-					
-				</div> 
-			 
-				
-				
-                <div class="row">
-                    <div class="col-md-9 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">                            
-							<div class="panel-heading">
-							Area Chart
-						</div>
-						<div class="panel-body">
-							<div id="morris-area-chart"></div>
-						</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Donut Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-				<div class="row">
-				<div class="col-md-12">
-				
-					</div>		
-				</div> 	
-                <!-- /. ROW  -->
-
+				    
+     			<div id="main" style="width: 300px;height:300px;"></div>
+<div id="main1" style="width: 600px;height:600px;"></div>
+	<script type="text/javascript">
+	    // 基于准备好的dom，初始化echarts实例
+	    var myChart = echarts.init(document.getElementById('main'));
+	    var myChart1 = echarts.init(document.getElementById('main1'));
+	    // 指定图表的配置项和数据
+	    var url = '${pageContext.request.contextPath}/GetAllDataServlet';
+	    $.getJSON(url).done(function(json) {//向url请求数据，如果成功，将数据放到json
+			// 2.从json中获得数据
+			suserCount = json.userCount;
+	    	slandlordCount = json.landlordCount;
+			shouseCount = json.houseCount;
+			sRentalHouseCount = json.RentalHouseCount;
+			shouseSale = json.houseSale;
+	    
+			option1 = {
+				    tooltip: {
+				        trigger: 'item',
+				        formatter: "{a} <br/>{b}: {c} ({d}%)"
+				    },
+				    legend: {
+				        orient: 'vertical',
+				        x: 'left',
+				        data:[ '租房客',' ',' ',' ','房东']
+				    },
+				    series: [
+				        {
+				            name:'访问来源',
+				            type:'pie',
+				            radius: ['50%', '70%'],
+				            avoidLabelOverlap: false,
+				            label: {
+				                normal: {
+				                    show: false,
+				                    position: 'center'
+				                },
+				                emphasis: {
+				                    show: true,
+				                    textStyle: {
+				                        fontSize: '30',
+				                        fontWeight: 'bold'
+				                    }
+				                }
+				            },
+				            labelLine: {
+				                normal: {
+				                    show: false
+				                }
+				            },
+				            data:[
+				                {value:suserCount-slandlordCount, name:'租客'},
+				                {value:0, name:'邮件营销'},
+				                {value:0, name:'联盟广告'},
+				                {value:0, name:'视频广告'},
+				                {value:slandlordCount, name:'房东'}
+				            ]
+				        }
+				    ]
+				};
+	    // 使用刚指定的配置项和数据显示图表。
+	    myChart.setOption(option1);
 	   
-				
-				
-				
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Tasks Panel
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">7 minutes ago</span>
-                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">16 minutes ago</span>
-                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">36 minutes ago</span>
-                                        <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has been added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1.23 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <i class="fa fa-fw fa-globe"></i> Saved the world
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Responsive Table Example
-                            </div> 
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>S No.</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>User Name</th>
-                                                <th>Email ID.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>John15482</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kimsila</td>
-                                                <td>Marriye</td>
-                                                <td>Kim1425</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Rossye</td>
-                                                <td>Nermal</td>
-                                                <td>Rossy1245</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Richard</td>
-                                                <td>Orieal</td>
-                                                <td>Rich5685</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Jacob</td>
-                                                <td>Hielsar</td>
-                                                <td>Jac4587</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Wrapel</td>
-                                                <td>Dere</td>
-                                                <td>Wrap4585</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /. ROW  -->
+	    option = {
+	    	    title: {
+	    	        text: '共有房子总数',
+	    	        subtext: 'From ExcelHome',
+	    	        sublink: 'http://e.weibo.com/1341556070/AjQH99che'
+	    	    },
+	    	    tooltip : {
+	    	        trigger: 'axis',
+	    	        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+	    	            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+	    	        },
+	    	        formatter: function (params) {
+	    	            var tar = params[1];
+	    	            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+	    	        }
+	    	    },
+	    	    grid: {
+	    	        left: '3%',
+	    	        right: '4%',
+	    	        bottom: '3%',
+	    	        containLabel: true
+	    	    },
+	    	    xAxis: {
+	    	        type : 'category',
+	    	        splitLine: {show:false},
+	    	        data : ['共有房子','出售','出租']
+	    	    },
+	    	    yAxis: {
+	    	        type : 'value'
+	    	    },
+	    	    series: [
+	    	        {
+	    	            name: '辅助',
+	    	            type: 'bar',
+	    	            stack:  '总量',
+	    	            itemStyle: {
+	    	                normal: {
+	    	                    barBorderColor: 'rgba(0,0,0,0)',
+	    	                    color: 'rgba(0,0,0,0)'
+	    	                },
+	    	                emphasis: {
+	    	                    barBorderColor: 'rgba(0,0,0,0)',
+	    	                    color: 'rgba(0,0,0,0)'
+	    	                }
+	    	            },
+	    	            data: [0,shouseCount-sRentalHouseCount,0]
+	    	        },
+	    	        {
+	    	            name: '房子',
+	    	            type: 'bar',
+	    	            stack: '总量',
+	    	            label: {
+	    	                normal: {
+	    	                    show: true,
+	    	                    position: 'inside'
+	    	                }
+	    	            },
+	    	            data:[shouseCount,sRentalHouseCount,shouseSale]
+	    	        }
+	    	    ]
+	    	};
+	    myChart1.setOption(option);
+	    })
+	</script>
+	
 			
 		
 				<footer>网站后台管理</p>

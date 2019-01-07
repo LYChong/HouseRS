@@ -28,4 +28,16 @@ public class HouseServiceImpl implements IHouseService {
 		return houseDao.deleteHouse(houno);
 	}
 
+
+	//查询房子总数
+	public int getHouseCount() {
+		return houseDao.getHouseCount();
+	}
+
+
+	//查询出租房子数
+	public int getRentalHouseCount() {
+		return houseDao.getRentalHouseCount();
+	}
+
 }
