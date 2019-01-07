@@ -49,4 +49,34 @@
     <servlet-name>DoChartsServlet</servlet-name>
     <url-pattern>/DoChartsServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddHouseServlet</display-name>
+    <servlet-name>AddHouseServlet</servlet-name>
+    <servlet-class>com.house.servlet.AddHouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddHouseServlet</servlet-name>
+    <url-pattern>/AddHouseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QueryAllHouseServlet</display-name>
+    <servlet-name>QueryAllHouseServlet</servlet-name>
+    <servlet-class>com.house.servlet.QueryAllHouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryAllHouseServlet</servlet-name>
+    <url-pattern>/QueryAllHouseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeletHouseServlet</display-name>
+    <servlet-name>DeletHouseServlet</servlet-name>
+    <servlet-class>com.house.servlet.DeletHouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeletHouseServlet</servlet-name>
+    <url-pattern>/DeletHouseServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

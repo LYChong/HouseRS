@@ -97,7 +97,7 @@ public class DBUtil {
 	
 	//通用的查   :  返回值一个集合  
 	public static ResultSet executeQuery(String sql,Object[] params) {
-		List<Admin> students = new ArrayList<>();
+		List<Admin> admins = new ArrayList<>();
 		Admin admin = null;
 		try {
 			pstmt = createPreparedStatement(sql, params);
