@@ -39,7 +39,7 @@
     <div class="body1">
  <!--导航接口-->
         <ul>
-            <li><a href="#">区域找房</a></li>
+            <li><a href="index.jsp">区域找房</a></li>
             <li><a href="#">小区</a></li>
             <li><a href="lease.jsp">我要出租</a></li>
             <li><a href="sale.jsp">我要出售</a></li>
