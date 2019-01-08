@@ -51,15 +51,15 @@ public class GetAllDataServlet extends HttpServlet {
 		Integer RentalHouseCount1 = RentalHouseCount; 
 		Integer houseCount1 = houseCount;
 		//计算出出售的房子数
-		Integer houseSale = houseCount1 - RentalHouseCount;
+		Integer houseSale1 = houseCount1 - RentalHouseCount;
 		System.out.println(houseCount);
 		System.out.println(RentalHouseCount1);
 		
 		//json 数据存储
 		Map<String, Object> map = new HashMap<>();
 		map.put("houseCount", houseCount1);
-		map.put("RentalHouseCount", RentalHouseCount);
-		map.put("houseSale", houseSale);
+		map.put("RentalHouseCount", RentalHouseCount1);
+		map.put("houseSale", houseSale1);
 		map.put("userCount", userCount1);
 		map.put("landlordCount",landlordCount1 );
 		response.getWriter().println(JSON.toJSONString(map));

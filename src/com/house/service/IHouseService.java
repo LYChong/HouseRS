@@ -2,6 +2,7 @@ package com.house.service;
 
 import java.util.List;
 
+import com.house.entity.HouandUse;
 import com.house.entity.House;
 
 public interface IHouseService {
@@ -19,6 +20,9 @@ public interface IHouseService {
 	
 	//查询出租房子数
 	public int getRentalHouseCount();
+	
+	//查询房子方向
+	public List<HouandUse> queryHouseByDirection(String schaoxiang);
 
 	
 

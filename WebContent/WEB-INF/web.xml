@@ -79,4 +79,14 @@
     <servlet-name>DeletHouseServlet</servlet-name>
     <url-pattern>/DeletHouseServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QuerydirectionServlet</display-name>
+    <servlet-name>QuerydirectionServlet</servlet-name>
+    <servlet-class>com.house.servlet.QuerydirectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuerydirectionServlet</servlet-name>
+    <url-pattern>/QuerydirectionServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

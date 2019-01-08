@@ -2,6 +2,7 @@ package com.house.dao;
 
 import java.util.List;
 
+import com.house.entity.HouandUse;
 import com.house.entity.House;
 
 public interface IHouseDao {
@@ -19,4 +20,7 @@ public interface IHouseDao {
 	
 	//查询出租房子数
 	public int getRentalHouseCount();
+	
+	//更据朝向查询房子所有信息
+	public List<HouandUse> queryHouandUseBydirection(String schaoxiang); 
 }

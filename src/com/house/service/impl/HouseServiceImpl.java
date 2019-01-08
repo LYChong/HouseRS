@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.house.dao.IHouseDao;
 import com.house.dao.impl.HouseDaoImpl;
+import com.house.entity.HouandUse;
 import com.house.entity.House;
 import com.house.service.IHouseService;
 
@@ -38,6 +39,13 @@ public class HouseServiceImpl implements IHouseService {
 	//查询出租房子数
 	public int getRentalHouseCount() {
 		return houseDao.getRentalHouseCount();
+	}
+
+
+	@Override
+	public List<HouandUse> queryHouseByDirection(String schaoxiang) {
+		
+		return houseDao.queryHouandUseBydirection(schaoxiang);
 	}
 
 }
