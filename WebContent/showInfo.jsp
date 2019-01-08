@@ -256,7 +256,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="index.jsp"><i class="fa fa-dashboard"></i> 数据统计</a>
+                        <a href="Adminindex.jsp"><i class="fa fa-dashboard"></i> 数据统计</a>
                     </li>
                     
 					 
