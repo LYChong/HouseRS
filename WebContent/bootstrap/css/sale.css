@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.box{
+    height: 1000px;
+    width: 1200px;
+    margin: auto;
+
+}
+.head,.body1,.body2{
+    width: 100%;
+    height: 5%;
+
+}
+.body1{
+    background-color: #62ab00;
+    height:50px;
+
+}
+
+.body3{
+    background-color:#62ab00 ;
+    height: 4%;
+    text-align: center;
+    color: white;
+
+}
+
+.head{
+    height: 6%;
+}
+/*这是head中的css样式*/
+.s1{
+    text-shadow:  -5px -5px 2px gray;
+    font-size: 30px;
+    line-height: 55px;
+    color: green;
+}
+.s2{
+
+    font-size: 30px;
+    line-height: 55px;
+    color: green;
+}
+.s3{
+    font-size: 25px;
+    line-height: 55px;
+    color:#62ab00;
+}
+.s4{
+    font-size: 15px;
+    color: #000;
+    line-height: 55px;
+}
+.head-right{
+
+    height: 100%;
+    width: 40%;
+
+    display: inline;
+    float: right;
+}
+.head-right2{
+    height: 100%;
+    width:8%;
+
+    display: inline;
+    float: right;
+    line-height: 55px;
+}
+.form-group,.btn-success{
+    margin-top: 10px;
+}
+#exampleInputAmount{
+    width: 400px;
+}
+
+/*这是body1中css样式
+.body1-left{
+    width: 50%;
+    height: 100%;
+    border: 1px solid;
+}
+*/
+.body1 ul{
+    margin: 0px;
+    padding: 0px;
+}
+.body1 ul li{
+    list-style: none;
+    width: 150px;
+    height: 45px;
+    display: inline;
+    float: left;
+
+
+}
+.body1 ul li a{
+
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    height: 45px;
+    display: block;
+    padding: 0px 0px 0px 30px;
+    color:white;
+}
+.body1 ul li a:hover{
+    background-color: #599700;
+    color: white;
+    text-decoration: none;
+}
+/*这是body2中的css*/
+.s5 a{
+    line-height: 55px;
+    font-size: 15px;
+    color: #666666;
+    text-decoration: none;
+    text-align: left;
+}
+
+.f1 ul li{
+    
+    display: block;
+    list-style: none;
+    height: 70px;
+
+}
+.body4{
+    height: 80%;
+    
+    width: 100%;
+}
+.body4 ul{
+    margin: 0px;
+    padding: 0px;
+}

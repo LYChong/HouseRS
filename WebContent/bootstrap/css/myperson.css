@@ -1,0 +1,191 @@
+@charset "UTF-8";
+.box{
+    height: 1000px;
+    width: 1200px;
+    margin: auto;
+
+}
+.head,.body1,.body2{
+    width: 100%;
+    height: 5%;
+
+}
+.body1{
+    background-color: #62ab00;
+    height:50px;
+
+}
+
+.body3{
+    background-color:#62ab00 ;
+    height: 4%;
+    text-align: center;
+    color: white;
+
+}
+
+.head{
+    height: 6%;
+}
+/*这是head中的css样式*/
+.s1{
+    text-shadow:  -5px -5px 2px gray;
+    font-size: 30px;
+    line-height: 55px;
+    color: green;
+}
+.s2{
+
+    font-size: 30px;
+    line-height: 55px;
+    color: green;
+}
+.s3{
+    font-size: 25px;
+    line-height: 55px;
+    color:#62ab00;
+}
+.s4{
+    font-size: 15px;
+    color: #000;
+    line-height: 55px;
+}
+.head-right{
+
+    height: 100%;
+    width: 40%;
+
+    display: inline;
+    float: right;
+}
+.head-right2{
+    height: 100%;
+    width:8%;
+
+    display: inline;
+    float: right;
+    line-height: 55px;
+}
+.form-group,.btn-success{
+    margin-top: 10px;
+}
+#exampleInputAmount{
+    width: 400px;
+}
+
+/*这是body1中css样式
+.body1-left{
+    width: 50%;
+    height: 100%;
+    border: 1px solid;
+}
+*/
+.body1 ul{
+    margin: 0px;
+    padding: 0px;
+}
+.body1 ul li{
+    list-style: none;
+    width: 150px;
+    height: 45px;
+    display: inline;
+    float: left;
+
+
+}
+.body1 ul li a{
+
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    height: 45px;
+    display: block;
+    padding: 0px 0px 0px 30px;
+    color:white;
+}
+.body1 ul li a:hover{
+    background-color: #599700;
+    color: white;
+    text-decoration: none;
+}
+/*这是body2中的css*/
+.s5 a{
+    line-height: 55px;
+    font-size: 15px;
+    color: #666666;
+    text-decoration: none;
+    text-align: left;
+}
+.hody3{
+    height: 85%;
+    width: 100%;
+}
+
+.hody3s{
+	height:5%;
+	width:100%;
+}
+
+
+
+.hody3s ul{
+	margin:0px;
+	padding:0px;
+}
+.hody3s ul li{
+	display:inline;
+	width:100px;
+	height:50px;
+}
+.selected{
+	background:black;
+	color:white;
+}
+
+
+
+
+.tab_box{
+	height:80%;
+	width:100%;
+}
+.int1,.int2{
+    height: 20%;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+.left,.left2{
+    float: left;
+    height: 100%;
+    width: 30%;
+    background-image: url("./tupian/ww.jpg");
+    background-size: 100% 100%;
+    display: inline;
+}
+.right,.right2{
+    float:right;
+    height: 100%;
+    width: 68%;
+
+}
+.right ul,.right2 ul{
+    margin: 0px;
+    padding: 0px;
+}
+.right ul li,.right2 ul li{
+    display: block;
+
+    height: 55px;
+
+
+}
+.s5 h3,.s52 h3{
+    line-height: 55px;
+}
+.l1 span,.l12 span{
+    line-height: 55px;
+    color:#666666;
+}
+.l2,.l22{
+    text-align: right;
+}

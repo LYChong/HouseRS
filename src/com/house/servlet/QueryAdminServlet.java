@@ -55,7 +55,7 @@ public class QueryAdminServlet extends HttpServlet {
 			session.setAttribute("pwd", pwd);
 			session.setAttribute("number", number);
 			session.setAttribute("unumber", unumber);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("Adminindex.jsp");
 		}else {
 			response.sendRedirect("adminLogin.jsp");
 		}
