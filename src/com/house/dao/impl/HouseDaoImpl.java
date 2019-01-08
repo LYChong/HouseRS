@@ -79,7 +79,6 @@ public class HouseDaoImpl implements IHouseDao{
 	}
 
 	//更据朝向查房子
-	@SuppressWarnings("null")
 	public List<HouandUse> queryHouandUseBydirection(String schaoxiang) {
 		List<HouandUse> houanduses=new ArrayList<HouandUse>();
 		House house = null;
@@ -87,7 +86,7 @@ public class HouseDaoImpl implements IHouseDao{
 		PreparedStatement pstmt = null;
 		ResultSet resultSet = null;
 		try {
-			String sql = "SELECT * FROM user a , house b WHERE chaoxiang like  ? and a.username=b.username;";
+			String sql = "SELECT * FROM user a , house b WHERE address like  ? and a.username=b.username;";
 			Object[] params= { "%"+schaoxiang+"%"};
 			resultSet = DBUtil.executeQuery(sql, params);
 			while(resultSet.next()) {

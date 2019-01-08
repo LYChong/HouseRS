@@ -22,12 +22,12 @@
             <span>&nbsp;&nbsp;<a href="sign_up1.jsp">注册</a></span>
         </div>
         <div class="head-right">
-            <form class="form-inline">
+            <form class="form-inline" action="QuerydirectionServlet">
               <div class="form-group">
 
                    <div class="input-group">
  <!--搜索框接口-->
-                       <input type="text" class="form-control" id="exampleInputAmount" placeholder="输入地址">
+                       <input type="text" class="form-control" id="exampleInputAmount" name="address" placeholder="输入地址">
                    </div>
   </div>
   <button type="submit" class="btn btn-success">搜索</button>

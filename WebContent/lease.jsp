@@ -60,7 +60,7 @@ int user=Integer.parseInt(username);
         <span class="s5"><a href="">滁州房产网</a>><a href="">滁州租房</a></span>
     </div>
     <div class="body3">
-        <h1 class="h1">出售发布</h1>
+        <h1 class="h1">出租发布</h1>
     </div>
     <div class="body4">
         <form action="Houseadd2Servlet" class="form-horizontal f1">
